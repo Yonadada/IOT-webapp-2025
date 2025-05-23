@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 태그 선택자*/
+        .select{
+        
+            color:pink; 
+        }
+        .item {
+            background-color: rgb(213, 216, 18);
+        }
+
+        /* 태그 선택자 중, 속성선택자*/
+        input[type="text"] { 
+            background-color: antiquewhite;
+        }
+
+        input[type="password"] { 
+            background-color: indianred;
+        }
+
+        input[type="submit"]{
+            background-color: lightpink;
+            color: black;
+        }
+
+        #section h2{
+            color: black;
+        }
+        
+        #section .title{
+            color: brown;
+        }
+
+        #section > p{
+            color: burlywood;
+        }
+    
+
+        /*
+        section > p {}는 (자식 선택자)
+        의미: id="section"인 요소의 직계 자식인 <p>만 스타일 적용
+        <div id="section">
+            <p>이건 적용됨</p>         <!-- O -->
+            <div>
+                <p>이건 적용 안됨</p>   <!-- X -->
+            </div>
+        </div>
+    
+        section p{}는 (후손 선택자)
+        의미: id="section"인 요소의 모든 후손 중 <p> 요소에 스타일 적용
+        <div id="section">
+            <p>이건 적용됨</p>          <!-- O -->
+            <div>
+                <p>이것도 적용됨</p>    <!-- O -->
+            </div>
+        </div>    
+        */
+
+        /* 반응, 상태 선택자 */
+        input:focus {
+            background-color: paleturquoise;
+        }
+
+        input:disabled{
+            background-color: gainsboro;
+        }
+
+        #menu{
+            overflow: hidden;
+        }
+        /* WPF -> l,t,r,b ( 순서가 다름 )
+            css -> t,r,b,l
+        */
+        #menu li{
+            list-style: none;
+            float: left;
+            padding: 10px 5px 15px 20px;
+        }
+        /* 구조 선택자 */
+        /* 2n 짝수번째 자식들, (2n+1) 홀수번째 자식들  */
+        #menu li:nth-child(2n) {
+            background-color: rebeccapurple;
+        }
+        #menu li:nth-child(2n+1){
+            background-color: plum;
+        }
+        #menu li:first-child{
+            border-radius: 10px 0 0 10px;
+        }
+
+        #menu li:last-child{
+            border-radius: 0 10px 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>애플</li>
+        <li class="item focus">바나나</li>
+        <li class="select">망고스틴</li>
+        <li class="select">용과</li>
+    </ul>
+    <br>
+        <input type="text" value="yokinada"><br>
+        <input type="password" value="12345" disabled><br>
+        <input type="submit">
+    </from>
+    <div id="section">
+        <h2 class="title">Lorem ipsum.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <ul id="menu">
+        <li>Google</li>
+        <li>Naver</li>
+        <li>space X</li>
+        <li>야후</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</body>
+</html>

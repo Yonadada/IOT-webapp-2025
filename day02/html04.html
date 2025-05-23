@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 레이아웃</title>
+    <style>
+        /* 전체 중앙정렬 */
+        * {
+            margin: 10px;
+            padding: 0;
+        }
+
+        body{
+            margin: 0 auto; /* 중앙정렬에는  margin: 0 auto 해야함!!!! 중요!!!!*/
+            width: 500px;
+        }
+        
+        /* 메뉴의 수평정렬
+        overflow : hidden 는 페이지의 해당 블럭을 다 차지*/
+        div.container {
+            overflow: hidden;
+        }
+        
+        div.item{
+            float: left;
+            margin: 0 5px 0 5px;
+            padding: 10px;
+            border: 2px solid paleturquoise;
+        }
+
+        
+        p.colored{
+            width: 400px;
+            color: goldenrod;
+            /* 글자가 길면 ...으로 생략되는 핵심 3요소 = overflow, text-overflow,space */
+            overflow: hidden;   /* 넘치는 부분을 숨김 */
+            text-overflow: ellipsis; /* 넘친 부분을 ...으로 표시 */
+            white-space: nowrap;  /* 줄바꿈 없이 한 줄로 표시 */  
+        }
+
+        /* 절대 위치 */
+        #container {
+            width: 400px;
+            height: 300px;
+            border: 5px solid black;
+            overflow: hidden;
+            position: relative; /* 상대적 위치 */
+        }
+        .circle{
+            position: absolute; /* 절대경로는 container 내에서의 절대경로이다 */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 5px black;
+        }
+
+        #red {
+            background-color: red;
+            left: 20px; top: 20px;
+            
+        }
+
+        #green {
+            background-color: green;
+            right: 20px; top: 20px;
+        }
+
+        #orange{
+            background-color: orange;
+            right: 20px; bottom: 20px;
+        }
+
+        #blue {
+            background-color: blue;
+            bottom: 20px; left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="total">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        <div class="container">
+            <div class="item">메뉴1</div>
+            <div class="item">메뉴1</div>
+            <div class="item">메뉴1</div>
+            <div class="item">메뉴1</div>
+            <div class="item">메뉴1</div>
+        </div>    
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+    </div>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus exercitationem quos culpa. Facilis cupiditate enim aliquid placeat deleniti molestiae asperiores nisi vero adipisci? Eligendi dolorem explicabo reiciendis voluptates modi. Provident eos dignissimos consequatur debitis odit eveniet alias autem, fuga natus! Voluptatem voluptates doloremque quo? Quisquam mollitia ab ipsa non. Voluptate alias officia quam eligendi magni similique consequatur odio non nulla commodi obcaecati laudantium, quae, earum adipisci. Doloremque non quaerat fuga eaque dolorem accusantium porro aperiam labore laborum quas est facere facilis ducimus, eveniet vel architecto, quasi animi unde necessitatibus velit! Sunt voluptas dicta recusandae perspiciatis velit voluptates sequi tempore obcaecati!</p>
+
+    <div id="container">
+        <div id="red" class="circle"></div>
+        <div id="green" class="circle"></div>
+        <div id="orange" class="circle"></div>
+        <div id="blue" class="circle"></div>
+    </div>
+    <p class="colored">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, doloribus nulla delectus saepe earum rem vitae dolore cum iste iure ut provident incidunt, nam minima eos. Cum beatae vel maxime?</p>
+
+</body>
+</html>

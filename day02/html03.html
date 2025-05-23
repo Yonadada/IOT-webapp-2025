@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 계속</title>
+    <style>
+        #inn_div{
+            background-color: palevioletred;
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+            padding: 10px;
+
+            border: 20px solid black;
+            /* 너무 길다 그래서 위 코드처럼 사용*/
+            /* border-top: 20px;
+            border-right: 20px;
+            border-bottom: 20px;
+            border-left: 20px;
+            border-style: solid;
+            border-color: black; */
+        }
+        
+        .box {
+            /* 
+            inline-none은 화면에서 사라짐
+            inline-block은 페이지 넓이만큼
+              */
+            display: inline-block; 
+            border-color: black;
+            border-width: 10px; /* thick */
+            border-style: dashed;
+            border-radius: 15px 20px 30px 40px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="out_div"> 
+        <div id="inn_div">
+            BOX
+        </div>
+
+        <div class="box">
+            <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        </div>
+    </div?>
+</body>
+</html>
