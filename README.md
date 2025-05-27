@@ -381,9 +381,7 @@
 9. Bootstrap Example의 테마 적용
 10. 전체화면
 
-
-
-
+    https://github.com/user-attachments/assets/9297f4de-3849-4834-81f2-16ee7d0a0263
 
 ### 5일차
 
