@@ -576,7 +576,7 @@
         - `Microsoft.EntityFrameworkCore.Tools` 8.0.x
         - `Pomelo.EntityFrameworkCore.MySql` 8.0.3
         - EntityFrameworkCore는 전부 Version Major 숫자가 일치해야 함(현재 8버전)
-    - EntityFramework Code First 방식
+    - EntityFramework `Code First` 방식
         - DB를 잘 몰라도 웹개발 가능토록 만든 기술
 
     - Model > News 클래스 생성
@@ -621,6 +621,54 @@
 ## 6일차
 
 ### ASP.NET Core
+- DB를 먼저 설계하고 관련된 c# 코드를 위저드가 자동으로 만들어주는 방식
+- EntityFramework  DB 연동방식 : ORM( Object - Relational Mapping) 방식
+    - 제일 최근의 DB 연동기법
+    - Spring Boot JPA, myBatis 동일
+    - EntityFramework - WPF, 윈앱, 웹앱
+
+#### EF DB First 연습 
+1. 프로젝트 생성
+
+2. nuGet 패키지 관리자
+    - Microsoft.EntityFrameworkCore 8.0.16
+    - Microsoft.EntityFrameworkCore.Tools 8.0.16
+    - Microsoft.EntityFrameworkCore.Design 8.0.16(옵션)
+    - `MySql.EntityFrameworkCore` 8.0.14 ( DbFirst시 필요!)
+    - Pomelo.EntityFrameworkCore.MySql 8.0.14
+
+3. appsetting.json에 DB  연결 문자열 추가
+
+4. nuGet 패키지 관리 콘솔에서 해당 프로젝트로 변경 (기본 프로젝트 드롭다운)
+
+5. 아래 내용 입력 
+    ```shell
+    PM> dir
+        디렉터리: C:\Source\IOT-webapp-2025\day07\Day07Study
+
+
+    Mode                 LastWriteTime         Length  Name 
+     ----                 -------------         ------ ---- 
+    d-----        2025-05-30   오전 9:42                DbFirstWebApp 
+    d-----        2025-05-30   오전 9:22                MyPortfolioWebApp 
+    -a----        2025-05-29   오전 9:35           1158 Day07Study.sln  
+
+    PM> cd DbFirstWebApp
+    PM> Scaffold-DbContext "Server=localhost;Database=bookrentalshop;Uid=root;Pwd=12345;Charset=utf8;" MySql.EntityFrameworkCore -OutputDir Models
+    Build started...
+    Build succeeded.
+    ...
+    PM>
+    ```
+
+6. Visual Studio 프로젝트 Models 폴더 생성된 클래스 확인
+7. Progrm.cs DB 연결 초기화 추가
+8. BookrentalshopContext.cs 내 OnConfiguring 메서드 주석처리!
+9. BookController 컨트롤러(Entity Framework를 사용하여 뷰가 포함되는 MVC 컨트롤러 ) 생성
+10. _Layout.cshtml 네비게이션 메뉴 추가
+11. 실행확인
+
+    <img src="./image/web0017.png" width="600">
 
 #### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝(계속)
 - 뉴스, 게시판 완료
