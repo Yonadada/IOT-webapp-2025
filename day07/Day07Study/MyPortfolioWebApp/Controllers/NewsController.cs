@@ -13,11 +13,12 @@ namespace MyPortfolioWebApp.Controllers
             _context = context;
         }
 
-        // GET: News
+        // GET: News . http://locahost:5234/News/Index 요청했음
         public async Task<IActionResult> Index()
         {
-            // _context News SELECT * FROM News;
-            return View(await _context.News.ToListAsync()); // 
+            // _context News
+            // SELECT * FROM News.
+            return View(await _context.News.ToListAsync()); // 뷰화면에 데이터를 가지고감
         }
 
         // GET: News/Details/5
@@ -28,7 +29,7 @@ namespace MyPortfolioWebApp.Controllers
                 return NotFound();
             }
 
-            // SELECT * FROM News WHERE Id = id;
+            // SELECT * FROM News WHERE id = @id
             var news = await _context.News
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (news == null)
@@ -39,10 +40,10 @@ namespace MyPortfolioWebApp.Controllers
             return View(news);
         }
 
-        // GET: News/Create
+        // GET: http://localhost:5234/News/Create GET method로 호출!!
         public IActionResult Create()
         {
-            return View();
+            return View();  // View로 데이터를 가져갈게 아무것도 없음
         }
 
         // POST: News/Create
@@ -50,6 +51,7 @@ namespace MyPortfolioWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        // <form asp-controller="News" asp-action="Create"> 이 http://localhost:5234/News/Create 포스트메서드 호출
         public async Task<IActionResult> Create([Bind("Id,Writer,Title,Description,PostDate,ReadCount")] News news)
         {
             if (ModelState.IsValid)
@@ -71,6 +73,7 @@ namespace MyPortfolioWebApp.Controllers
                 return NotFound();
             }
 
+            // SELECT * FROM News WHERE id = @id
             var news = await _context.News.FindAsync(id);
             if (news == null)
             {
@@ -142,7 +145,7 @@ namespace MyPortfolioWebApp.Controllers
             var news = await _context.News.FindAsync(id);
             if (news != null)
             {
-                // DELETE FROM News WHERE Id = @id;
+                // DELETE FROM News WHERE id = @id
                 _context.News.Remove(news);
             }
             // COMMIT

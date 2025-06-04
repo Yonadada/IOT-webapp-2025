@@ -5,6 +5,11 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
 /* Fonts */
 :root {
     --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -33,6 +38,7 @@
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
 .light-background {
     --background-color: #e9e8e6;
     --surface-color: #ffffff;
@@ -143,6 +149,7 @@ h6 {
         order: 3;
     }
 }
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -416,38 +423,38 @@ h6 {
     position: relative;
 }
 
-    .footer .copyright p {
-        margin-bottom: 0;
-    }
+.footer .copyright p {
+    margin-bottom: 0;
+}
 
-    .footer .social-links {
-        margin-top: 20px;
-    }
+.footer .social-links {
+    margin-top: 20px;
+}
 
-        .footer .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-            font-size: 16px;
-            color: color-mix(in srgb, var(--default-color), transparent 50%);
-            margin: 0 5px;
-            transition: 0.3s;
-        }
+.footer .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+    font-size: 16px;
+    color: color-mix(in srgb, var(--default-color), transparent 50%);
+    margin: 0 5px;
+    transition: 0.3s;
+}
 
-            .footer .social-links a:hover {
-                color: var(--accent-color);
-                border-color: var(--accent-color);
-            }
+.footer .social-links a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
 
-    .footer .credits {
-        margin-top: 10px;
-        font-size: 13px;
-        text-align: center;
-    }
+.footer .credits {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
 
 /*--------------------------------------------------------------
 # Preloader
@@ -527,6 +534,7 @@ h6 {
         opacity: 1;
         bottom: 15px;
     }
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -904,7 +912,6 @@ section,
     }
 }
 
-
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
@@ -963,6 +970,7 @@ section,
         background: var(--background-color);
         border: 2px solid var(--accent-color);
     }
+
 
 /*--------------------------------------------------------------
 # Services Section

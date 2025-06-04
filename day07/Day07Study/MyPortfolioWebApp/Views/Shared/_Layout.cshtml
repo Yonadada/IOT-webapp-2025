@@ -3,20 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MyPortfolioWebApp</title>
-
-    <!-- Fonts -->
+    <title>@ViewData["Title"] - My Portfolio</title>
+    <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    @* <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"> *@
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/lib/bootstrap-icon/bootstrap-icons.min.css"/>
-    <link rel="stylesheet" href="~/vendor/aos/aos.css"/>
-    <link rel="stylesheet" href="~/vendor/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="~/vendor/glightbox/css/glightbox.min.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap-icon/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/vendor/aos/aos.css" />
+    <link rel="stylesheet" href="~/vendor/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="~/vendor/glightbox/css/glightbox.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     @* <link rel="stylesheet" href="~/MyPortfolioWebApp.styles.css" asp-append-version="true" /> *@
 </head>
@@ -27,12 +26,12 @@
             <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center me-auto me-xl-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.png" alt=""> -->
-                <h1 class="sitename">Yonadada</h1>
+                <h1 class="sitename">Hugo</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <!-- ASP.NET Core Controller/View 형태로 변경되어야 함 -->
+                    <!-- ASP.NET Core Controller/View형태로 변경되어야 함 -->
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-controller="Resume" asp-action="Index">Resume</a></li>
@@ -42,7 +41,7 @@
                         <a href="#"><span>Board</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
                             <li><a asp-controller="News" asp-action="Index">News</a></li>
-                            <li><a asp-controller="Board" asp-action="Index">FreeBoard</a></li>
+                            <li><a asp-controller="Board" asp-action="Index">Board</a></li>
                         </ul>
                     </li>
                     <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
@@ -59,15 +58,15 @@
 
         </div>
     </header>
-    <!-- 배경 이미지 여백 때문에 <div container 삭제>-->
-    <main role="main" class="main pb-3">
+    <!-- 배경 이미지 여백땜분에 <div container 삭제 -->
+    <main class="main">
         @RenderBody()
     </main>
 
     <footer id="footer" class="footer light-background">
 
         <div class="container">
-            <div class="copyright text-center ">
+            <div class="copyright text-center">
                 <p>© <span>Copyright</span> <strong class="px-1 sitename">Kelly</strong> <span>All Rights Reserved<br></span></p>
             </div>
             <div class="social-links d-flex justify-content-center">
@@ -87,8 +86,8 @@
 
     </footer>
 
-    <!-- Scroll Top : main 영역의 높이 100px을 넘어서면 그때 표시! -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center active">
+    <!-- Scroll Top : 웹페이지 영역의 높이 100px을 넘어서면 그때 표시! -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
         <i class="bi bi-arrow-up-short"></i>
     </a>
 
