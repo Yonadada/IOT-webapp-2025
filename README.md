@@ -384,7 +384,7 @@
 
     https://github.com/user-attachments/assets/d205515e-3edc-4a2a-a538-a08137dad2b1
 
-### 5일차
+## 5일차
 
 ### 웹개발 기술 용어
 - SPA : Single Page Applicaiton. 페이지를 이동해도 새로고침 없이 한페이지에서 작동하는 웹
@@ -547,7 +547,7 @@
 
     <img src="./image/web0013.png" width="600">
 
-## 5일차
+## 6일차
 
 ### ASP.NET Core
 
@@ -576,7 +576,7 @@
         - `Microsoft.EntityFrameworkCore.Tools` 8.0.x
         - `Pomelo.EntityFrameworkCore.MySql` 8.0.3
         - EntityFrameworkCore는 전부 Version Major 숫자가 일치해야 함(현재 8버전)
-    - EntityFramework `Code First` 방식
+    - **EntityFramework** `Code First` 방식 - C#으로 클래스 작성하고 위저드를 통해서 DB를 만드는 방식
         - DB를 잘 몰라도 웹개발 가능토록 만든 기술
 
     - Model > News 클래스 생성
@@ -600,7 +600,7 @@
         ```
     - MySQL Workbench 해당 스키마(DB)에 News 테이블 생성 확인, 더미데이터 입력
     - NewsController 클래스 생성
-    - Entity Framework를 사용하여 뷰가 포함된 MVC 컨트롤러 선택
+    - `Entity Framework를 사용하여 뷰가 포함된 MVC 컨트롤러` 선택
 
     <img src="./image/web0014.png" width="600">
 
@@ -616,56 +616,56 @@
 
 9. 작업화면
 
-    https://github.com/user-attachments/assets/fc601a44-3c84-4dc2-af1f-65452bbf59ea
+    https://github.com/user-attachments/assets/33b49f9b-946b-44ae-9ad2-ae6521bf1e7d
+    
 
-## 6일차
+## 7일차
 
 ### ASP.NET Core
-- DB를 먼저 설계하고 관련된 c# 코드를 위저드가 자동으로 만들어주는 방식
-- EntityFramework  DB 연동방식 : ORM( Object - Relational Mapping) 방식
-    - 제일 최근의 DB 연동기법
-    - Spring Boot JPA, myBatis 동일
+
+#### EntityFramework DB First
+- DB를 먼저 설계하고 관련된 C#코드를 위저드가 자동으로 만들어주는 방식
+- EntityFramework DB연동방식 : ORM(Object-Relational Mapping) 방식
+    - 제일 최근의 DB연동기법
+    - Spring Boot JPA, myBatis 과 동일
     - EntityFramework - WPF, 윈앱, 웹앱
-- 
+- DB의 테이블 내용을 VS Models에 가져온 이후는 Code First, DB First 작업이 동일
+- 자동 완성으로 그냥 사용은 불가. 수정이 필요
 
-#### EF DB First 연습 
+#### EF DB First 연습
 1. 프로젝트 생성
-
-2. nuGet 패키지 관리자
+2. NuGet 패키지 관리자
     - Microsoft.EntityFrameworkCore 8.0.16
     - Microsoft.EntityFrameworkCore.Tools 8.0.16
-    - Microsoft.EntityFrameworkCore.Design 8.0.16(옵션)
-    - `MySql.EntityFrameworkCore` 8.0.14 ( DbFirst시 필요!)
-    - Pomelo.EntityFrameworkCore.MySql 8.0.14
+    - Microsoft.EntityFrameworkCore.Design 8.0.16 (옵션)
+    - `MySql.EntityFrameworkCore` 8.0.14 (DB First시 반드시 필요!!)
+    - Pomelo.EntityFrameworkCore.MySql 8.0.3
+3. appsetting.json에 DB연결 문자열 추가
+4. NuGet 패키지 관리자 콘솔에서 해당 프로젝트로 변경(기본프로젝트 드롭다운)
+5. 아래 내용 입력
 
-3. appsetting.json에 DB  연결 문자열 추가
-
-4. nuGet 패키지 관리 콘솔에서 해당 프로젝트로 변경 (기본 프로젝트 드롭다운)
-
-5. 아래 내용 입력 
     ```shell
     PM> dir
-        디렉터리: C:\Source\IOT-webapp-2025\day07\Day07Study
+        디렉터리: C:/Source/iot-webapp-2025/day07/Day07Study
 
-
-    Mode                 LastWriteTime         Length  Name 
-     ----                 -------------         ------ ---- 
-    d-----        2025-05-30   오전 9:42                DbFirstWebApp 
-    d-----        2025-05-30   오전 9:22                MyPortfolioWebApp 
+    Mode                 LastWriteTime         Length   Name                                                                                                                                      
+    ----                 -------------         ------   ----                                                                                                                                      
+    d-----        2025-05-30   오전 9:32                DbFirstWebApp
+    d-----        2025-05-30   오전 9:22                MyPortfolioWebApp                                                                                                                         
     -a----        2025-05-29   오전 9:35           1158 Day07Study.sln  
 
-    PM> cd DbFirstWebApp
-    PM> Scaffold-DbContext "Server=localhost;Database=bookrentalshop;Uid=root;Pwd=12345;Charset=utf8;" MySql.EntityFrameworkCore -OutputDir Models
+    PM> cd ./DbFirstWebApp  
+    PM> Scaffold-DbContext "Server=localhost;Database=bookrentalshop;Uid=root;Pwd=12345;Charset=utf8;" 
+        MySql.EntityFrameworkCore -OutputDir Models
     Build started...
     Build succeeded.
     ...
-    PM>
+    PM> 
     ```
-
 6. Visual Studio 프로젝트 Models 폴더 생성된 클래스 확인
-7. Progrm.cs DB 연결 초기화 추가
+7. Program.cs DB연결 초기화 추가
 8. BookrentalshopContext.cs 내 OnConfiguring 메서드 주석처리!
-9. BookController 컨트롤러(Entity Framework를 사용하여 뷰가 포함되는 MVC 컨트롤러 ) 생성
+9. BookController 컨트롤러(Entity Framework를 사용하여 뷰가 포함된 MVC 컨트롤러) 생성
 10. _Layout.cshtml 네비게이션 메뉴 추가
 11. 실행확인
 
@@ -816,37 +816,40 @@
 
 ## 9일차 (25.06.04.)
 
+### ASP.NET Core 실습
+
 #### ASP.NET Core MVC - Kelly Portfolio 클로닝 (계속)
 1. 뉴스페이징 완료
-    - 페이징 첫 페이지, 이전 페이지, 다음 페이지, 마지막 페이지 링크 추가
-    - Bootstrap 디자인 적용 
-2. 검색 
+    - 페이징 첫페이지, 이전페이지, 다음페이지, 마지막페이지 링크 추가
+    - Bootstrap 디자인 적용
+2. 검색
     - 검색 폼 추가
     - 컨트롤러 Index() 메서드에 검색어 파라미터 추가
-    - 쿼리 변경(카운터 쿼리, 저장 프로시저 검색부분)
-    - 페이징 부분에 GET 메서드에 검색어 파라미터 추가
+    - 쿼리 변경(카운트 쿼리, 저장프로시저 검색부분)
+    - 페이징 부분 GET메서드에 검색어 파라미터추가
 
         <img src="./image/web0024.png" width="600">
 
 3. 한글화
-    - 각 페이지 한글로 입력 변경
+    - 각 페이지 한글로 입력변경
 
-4. 정적페이지 DB 연동
+4. 정적페이지 DB연동
     - About, Skill 모델 생성
     - NuGet 패키지 관리자 콘솔
         - Add-Migration
         - Update-Database
-    - HomeController의 About() 메서드에서 DB 연동
-    - About.cshtml에 데이터 변수 사용
+    - HomeController의 About() 메서드에서 DB연동
+    - About.cshtml에 데이터변수 사용
 
- 5. 회원가입/로그인
-    - ASP.NEt Core Identity API
-    - 사용자, 암호, 프로필데이터, 역할, 메일 확인, ... 작업과 Google OAuth
+5. 회원가입/로그인
+    - ASP.NET Core Identity API
+    - 사용자, 암호, 프로필데이터, 역할, 메일확인... 작업과 Google OAuth 연동 가능
     - NuGet 패키지 - Microsoft.AspNetCore.Identity.EntityFrameworkCore 설치
-    - Models.ApplicationDbContext에서 기반 클래스를 identityDbContext로 변경
+    - Models.ApplicationDbContext 에서 기반클래스를 IdentityDbContext로 변경
     - Program.cs 내용 추가
+
         ```cs
-        // ASP.NET Core Identity 설정
+        // ASP.NET Core Identity 설정!
         builder.Services.AddIdentity<IdentityUser, IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
@@ -854,71 +857,71 @@
         var app = builder.Build();
 
         // ...
+
         app.UseStaticFiles();
 
         app.UseRouting();
-        app.UseAuthentication();  // ASP.NEt Core Identity 계정
-        app.UseAuthorization()    // 권한
+        app.UseAuthentication();  // ASP.NET Core Identity 계정!
+        app.UseAuthorization();   // 권한
         ```
 
-    - NuGet 패키니 관리자 콘솔
+    - NuGet 패키지 관리자 콘솔
+
         ```bash
         PM> Add-Migration InitialIdentity
-        Build Started...
+        Build started...
         Build succeed.
         Done.
         PM> Update-database
-        // DB 생성
+        // DB생성
         Done.
         ```
 
-    - MySQL Workbench에 추가된 7개 AspNet* 테이블 확인
+    - MySQL Workbech에서 추가된 7개 AspNet* 테이블 확인
 
         <img src="./image/web0025.png" width="450">
-
 
 ## 10일차
 
 ### Visual Studio 개발 Tip
 - 이전 솔루션을 복사하고 나서 MSBuild에서 오류가 발생할 가능성이 있음
-- 이를 대비해서 프로젝트 내 bin, obj 폴더를 삭제 후 
-- VS 를 다시 실행하면 bin, obj 폴더가 재생성 된다
+- 이를 대비해서 프로젝트 내 bin, obj 폴더를 삭제 후
+- VS를 다시 실행하면 bin, obj 폴더를 재생성
 
 ### ASP.NET Core 실습
 
 #### ASP.NET Core MVC - Kelly Portfolio 클로닝 끝
-1. 회원가입 / 로그인 계속
-    - 자동생성 테이블 
-        - AspNetRoleClaims : 역할 내 모든 사용자에게 부여되는 클레임(권리 - 편집가능, 작성가능,...)
-        - AspNetRoles : 역할 저장 테이블(관리자, 사용자, 뷰어,...)
-        - AspNetUserClaims : 사용자가 소유한 클레임 
-        - AspNetUserLogins :  사용자가 로그인에 연결
-        - AspNetUserRoles : 사용자 테이블, 역할 테이블 연결하는 Join entity
-        - `AspNetUsers` : 사용자 정보 테이블
-        - AspNetUserToken : 사용자 인증 토큰 테이블 
-    
-    - Models.RegisterModel  회원가입 모델
+1. 회원가입/로그인 계속
+    - 자동생성 테이블
+        - AspNetRoleClaims : 역할 내 모든 사용자에게 부여되는 클레임(권리 - 편집가능, 작성가능, ...)
+        - AspNetRoles : 역할저장 테이블(관리자, 사용자, 뷰어...)
+        - AspNetUserClaims : 사용자가 소유한 클레임
+        - AspNetUserLogins : 사용자를 로그인에 연결
+        - AspNetUserRoles : 사용자테이블, 역할테일을 연결하는 Join entity
+        - `AspNetUsers` : 사용자정보 테이블
+        - AspNetUserTokens : 사용자 인증토큰 테이블
+    - Models.RegisterModel 클래스 생성
     - AccountController 클래스 생성
-        - Register(), Login(), Get/Post 메서드 추가 
-    - Register 뷰 추가 
+        - Register(), Login() Get/Post 메서드 추가
+    - Regiser 뷰 추가
     - Login 뷰 추가
     - 각 기능별 버튼, 링크 추가
 
-2. 회원가입 정보 확장 
-    - Models.CustomUser 클래스 생성. IdentityUser 를 상속
-    - Program.cs 에서 IdentityUser  -> CustomUser로 변경
-    - AccountController 에서 IdentityUser  -> CustomUser로 변경
-    - _Layout.cshtml, News.Index.cshtml, News.Detail.cshtml에 IdentityUser  -> CustomUser로 변경
-    - ApplicationDbContext.cs에서 IdentityUser  -> CustomUser로 변경
-    - NuGet 패키지 관리자 콘솔에서 
-        - Add-Migration (이름)실행, Update-Database 실행
-    - Account.Register.cshtml 입력 양식 추가
+2. 회원가입 정보 확장
+    - Models.CustomUser 클래스 생성. IdentityUser를 상속. City, Mobile, Hobby 속성 추가
+    - Program.cs 에서 IdentityUser -> CustomUser로 변경
+    - AccountController 에서 IdentityUser -> CustomUser로 변경
+    - _Layout.cshtml, News.Index.cshtml, News.Detail.cshtml에 IdentityUser -> CustomUser로 변경
+    - ApplicationDbContext.cs에서 IdentityUser -> CustomUser로 변경
+    - NuGet 패키지 관리자 콘솔에서
+        - Add-Migration (이름) 실행, Update-Database 실행
+    - Account.Register.cshtml 입력양식 추가
     - AccountController.cs Register() Post 메서드 수정
     - Program.cs에서 패스워드 정책을 간단하게 변경
 
 3. 게시판 준비
     - MySql Workbench에서 Board 테이블 생성
-    - NuGet 패키지 관리자 콘솔에서 DB 스캐폴드
+    - NuGet 패키지 관리자 콘솔에서 DB스캐폴드
         - Scaffold-DbContext "Server=localhost;..." Pomelo.EntityFrameworkCore.MySql -OutputDir BackupModels
     - BackupModels에서 필요한 모델클래스를 Models 이전, 수정
     - ApplicationDbContext에 `DbSet<Board>` 추가
@@ -926,9 +929,128 @@
 
 4. 이후 작업
     - HomeController Contact() Post메서드 신규 추가
-    - 메일 관련 작업 - Pendding
+    - 메일관련 작업 - Pendding
 
+## 11일차
 
-### ASP.NET Core API 서버
+### ASP.NET Core API서버(Web API)
+- 2000년도 초반, 웹서비스 이름의 변형
+- 웹을 통해서 데이터전달이 목적
+- API서버, WebAPI, RESTful Service, OpenAPI(공용)... 
+- 초기에는 XML을 데이터 전달로 사용
+- XML의 방대한 데이터크기때문에 현재는 JSON으로 거의 이전(XML의 1/3수준)
+- WebAPI 서버 사용처
+    - 하나의 서비스로 여러가지 앱에서 같이 사용할때
+    - 회사 ERP를 웹사이트, 모바일, PC앱으로 동시에 사용할때
+    - 알라딘 웹사이트, 모바일, PC책뷰어...
+
+#### Web API 만들기
+1. ASP.NET Core 웹 API로 프로젝트 생성
+2. Swagger 화면 확인
+3. Prgram.cs 소스 분석
+4. WeatherForecast 모델 클래스 확인
+5. WeatherForecastController 클래스 확인
+
+#### 웹서비스를 테스트 툴
+1. 웹브라우저 - URL을 입력, json뷰어확인
+2. Swagger UI - Visual Studio에 포함
+3. [Postman](https://www.postman.com/) - 가장 기능이 다양
+
+    <img src="./image/web0029.png" width="600">
+
+#### 웹서비스 4가지 메서드
+- 일반 웹사이트에서의 GET/POST는 동일
+- `GET` - 리소스(데이터) 조회
+- `POST` - 요청 데이터 처리(저장, 수정, 삭제). 주로 등록에 사용
+- `PUT` - 리소스 대체, 주로 수정에 사용
+- `DELETE` - 리소스 삭제, 주로 삭제에 사용
+- PATCH - 리소스 부분 변경(수정). 거의 사용안함. PATCH메서드를 지원하지 않으면 PUT으로 대체
+
+#### WebAPI CRUD 작업 연습
+|API|설명|Request body|Response body|
+|:--|:--|:--|:--|
+|GET ~/api/books|모든 책정보 가져오기|None|책정보 배열|
+|GET ~/api/books/{id}|특정 책정보 가져오기|None|책정보 한 건|
+|POST ~/api/books|새 책 추가|Book 데이터|Book 데이터|
+|PUT ~/api/books/{id}|기존책 수정|Book|None|
+|DELET ~/api/books/{id}|기존책 삭제|None|None|
+
+<img src="./image/web0026.png" width="600">
+
+1. WebAPI 프로젝트 생성
+2. Models.Book 모델 클래스 생성
+3. EntityFramework NuGet패키지 설치
+    - Microsoft.EntityFrameworkCore
+    - Pomelo.EntityFrameworkCore.MySql    
+4. appsettings.json DB연결문자열 추가
+5. MySQL Book 테이블 생성
+6. Models.AppDbContext 클래스 생성
+7. Program.cs AppDbContext 초기화 추가
+8. 스캐폴딩으로 Controller 생성
+    - API > EntityFramework 사용 동작이 포함된 API컨트롤러 선택
+
+    <img src="./image/web0027.png" width="600">
+9. 서버 실행
+
+    <img src="./image/web0028.png" width="600">
+
+#### OpenAPI 형식 WebAPI 연습
+1. IoT 센서데이터를 웹API 서비스
+2. Python에서 더미데이터 100만건 생성
+3. WebAPI 프로젝트 생성
+4. EntityFramework NuGet패키지 설치
+5. appsettings.json DB연결문자열 추가
+6. MySQL iot_datas 테이블 생성
+7. Models.iot_datas 클래스 생성
+8. Models.AppDbContext 클래스 생성
+9. Program.cs AppDbContext 초기화 추가
+10. 스캐폴딩으로 Controller 생성
+    - Get 메서드 외 모두 삭제
+11. Get 메서드 파라미터 추가, 쿼리 실행 로직 추가
+12. Swagger UI에서 테스트
+
+    <img src="./image/web0030.png" width="600">
+
+13. 웹브라우저 실행 확인
+
+    <img src="./image/web0031.png" width="600">
+
+## 12일차
+
+### ASP.NET Core API서버(계속)
+
+#### WebAPI 서버 + 웹사이트 + 윈앱(WPF)
+- 웹 사이트나 WPF 윈앱에서는 DB 연동 없이도 데이터를 
+- Todo List 오늘 할 일 리스트
+    |API|설명|Request body|Response body|
+    |:--|:--|:--|:--|
+    |GET ~/api/todoitems|모든 할 일 정보 가져오기|None|할 일 정보 배열|
+    |GET ~/api/todoitems/{id}|특정 할 일 정보 가져오기|None|할 일 정보 한 건|
+    |POST ~/api/todoitems|새 할 일 추가|todoItem 데이터|todoItem 데이터|
+    |PUT ~/api/todoitems/{id}|기존 할 일  수정|todoItem 데이터 |None|
+    |DELETE ~/api/todoitems/{id}|기존 할 일삭제|None|None|
+
+    1. 프로젝트 생성(내용 생략, 11일차에 설명 참고)
+    2. 패키지 설치
+    3. DB 구성, 생성
+    4. 컨트롤러 생성
+
+- WPF 앱 API 사용  - 데이터 포털로  부산맛집 정보앱, 영화즐겨찾기와 동일(GET 메서드만 사용)
+    1. WPF 프로젝트 생성
+    2. NuGet 패키지 관리에서 패키지 설치
+        - MahApps.Metro / IconPacks
+        - Microsoft.AspNet.WepApi.Client
+    3. UI 설정
+    4. 모델 설정, 컬렉션 설정 
+    5. WebAPI, 호출로 CRUD 구현
+    
+    <img src="./image/web0032.png" width="600">
+
+## 13일차
+
+### ASP.NET Core API 서버 (계속)
+
+#### WebAPI 서버 + 웹사이트
+
 
 ### AWS 클라우드 업로드
