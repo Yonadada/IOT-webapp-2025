@@ -48,10 +48,13 @@ namespace MyPortfolioWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Email,Writer,Title,Contents,PostDate,ReadCount")] Board board)
+        public async Task<IActionResult> Create([Bind("Id,Email,Writer,Title,Contents")] Board board)
         {
             if (ModelState.IsValid)
             {
+                board.PostDate = DateTime.Now; // 현재 날짜로 설정
+                board.ReadCount = 0; // 조회수 초기화
+
                 _context.Add(board);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
