@@ -52,7 +52,7 @@
                     @Html.DisplayNameFor(model => model.ReadCount)
                 </dt>
                 <dd class="col-sm-10">
-                    @(Model.ReadCount ?? 0)
+                    @Html.DisplayFor(model => model.ReadCount)
                 </dd>
             </dl>
 

@@ -45,16 +45,16 @@
             <thead>
                 <tr>
                     <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
                         @Html.DisplayNameFor(model => model.Email)
                     </th>
-                    @* <th> *@
-                    @*     @Html.DisplayNameFor(model => model.Writer) *@
-                    @* </th> *@
+                     <th> 
+                         @Html.DisplayNameFor(model => model.Writer) 
+                    </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Title)
-                    </th>
-                    <th> 
-                        @Html.DisplayNameFor(model => model.Contents)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.PostDate)
@@ -62,31 +62,31 @@
                     <th>
                         @Html.DisplayNameFor(model => model.ReadCount)
                     </th>
-                    <th></th>
+                    
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
+                        <td class="content-center">
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
                         <td class ="content-center">
                             @Html.DisplayFor(modelItem => item.Email)
                         </td>
-                        @* <td class="content-center"> *@
-                        @*     @Html.DisplayFor(modelItem => item.Writer) *@
-                        @* </td> *@
+                         <td class="content-center">
+                             @Html.DisplayFor(modelItem => item.Writer) 
+                         </td> 
                         <td >
                             <!-- Title에만 링크 -->
                             <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a>
                         </td>
                         <td class="content-center">
-                            @Html.DisplayFor(modelItem => item.Contents)
-                        </td>
-                        <td class="content-center">
                             @Html.DisplayFor(modelItem => item.PostDate)
                         </td>
                         <td class="content-center">
-                            @(item.ReadCount ?? 0)
+                        @Html.DisplayFor(modelItem => item.ReadCount)
                         </td>
                        
                    </tr>   

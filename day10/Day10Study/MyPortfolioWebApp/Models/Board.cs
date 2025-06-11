@@ -15,7 +15,6 @@ public partial class Board
     public string Email { get; set; }
 
     [DisplayName("작성자")]
-    [BindNever]
     public string? Writer { get; set; }
 
     [Required]
