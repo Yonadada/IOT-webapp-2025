@@ -112,6 +112,7 @@
 - UI기술로 많은 분야에서 사용
     - Qt, PyQt, Electron, Flutter(모바일), React Native(모바일), React.js, ...
 - [소스](./day01/html08.html)
+<hr/>
 
 ## 2일차
 
@@ -222,6 +223,7 @@
 - 순수 JS로 불리며 jQuery처럼 CDN링크가 필요없음
 - 전통적 방식보다 효율적으로 변경됨
 - 새로 개발되는 웹사이트는 Vanilla JS를 사용
+<hr/>
 
 ## 3일차
 
@@ -342,7 +344,7 @@
     - Bootstrap Image Gallery
 
     https://github.com/user-attachments/assets/fd0f5d4a-a8b7-4c84-bbad-cd682d40f5c0
-
+<hr/>
     
 ## 4일차
 
@@ -383,6 +385,8 @@
 10. 전체화면
 
     https://github.com/user-attachments/assets/d205515e-3edc-4a2a-a538-a08137dad2b1
+
+<hr/>
 
 ## 5일차
 
@@ -547,6 +551,8 @@
 
     <img src="./image/web0013.png" width="600">
 
+<hr/>
+
 ## 6일차
 
 ### ASP.NET Core
@@ -618,6 +624,7 @@
 
     https://github.com/user-attachments/assets/33b49f9b-946b-44ae-9ad2-ae6521bf1e7d
     
+<hr/>
 
 ## 7일차
 
@@ -720,6 +727,7 @@
     ```html
     <li><a asp-controller="Home" asp-action="Index" class="@ActiveClass("Home", "Index")">Home</a></li>
     ```
+<hr/>
 
 ## 8일차
 
@@ -813,6 +821,7 @@
     - index.cshtml 게시판 영역 아래에 페이징부분 작성
 
         <img src="./image/web0023.png" width="600">
+<hr/>
 
 ## 9일차 (25.06.04.)
 
@@ -880,6 +889,7 @@
     - MySQL Workbech에서 추가된 7개 AspNet* 테이블 확인
 
         <img src="./image/web0025.png" width="450">
+<hr/>
 
 ## 10일차
 
@@ -930,32 +940,7 @@
 4. 이후 작업
     - HomeController Contact() Post메서드 신규 추가
     - 메일관련 작업 - Pendding
-
-
-## 📋 게시판 기능 구현
-Bootstrap 기반으로 간단한 게시판 페이지를 구현하였습니다.  
-**글 등록 / 목록 조회 / 검색 / 상세 보기 / 수정 / 삭제** 기능을 제공합니다. ✨
-
-
-### 🖼️ 주요 화면
-- 게시판 목록
-  ![게시판 목록 화면](./image/day10(게시판)/board_main.png)
-
-- 게시글 작성
-  ![게시글 작성 화면](./image/day10(게시판)/board_create.png)
-
-- 게시글 상세보기
-  ![게시글 상세보기 화면](./image/day10(게시판)/detail_board.png)
-
-- 게시글 수정
-  ![게시글 수정 화면](./image/day10(게시판)/update_board.png)
-
-- 게시글 삭제
-  ![게시글 삭제 화면](./image/day10(게시판)/delete_board.png)
-
-- 게시글 검색 결과
-  ![게시글 검색 화면](./image/day10(게시판)/search.png)
-
+<hr>
 
 ## 11일차
 
@@ -1040,6 +1025,7 @@ Bootstrap 기반으로 간단한 게시판 페이지를 구현하였습니다.
 13. 웹브라우저 실행 확인
 
     <img src="./image/web0031.png" width="600">
+<hr>
 
 ## 12일차
 
@@ -1071,6 +1057,7 @@ Bootstrap 기반으로 간단한 게시판 페이지를 구현하였습니다.
     5. WebAPI, 호출로 CRUD 구현
     
     <img src="./image/web0032.png" width="600">
+<hr>
 
 ## 13일차
 
@@ -1106,22 +1093,94 @@ Bootstrap 기반으로 간단한 게시판 페이지를 구현하였습니다.
     - Program.cs 에 CROS 호출권한 설정 추가
     - 프론트엔드는 CROS 설정 필요없음
 
+- 실행화면
     <img src="./image/web0033.png" width="650">
+<hr>
 
 ## 14일차
 
 ### ASP.NET Core API 서버(계속)
 
 #### WebAPI 서버 + 웹사이트 (계속)
+- 할 일 수정/ 삭제
+- 실행 화면
+
+    <img src="./image/web0034.png" width="700">
+- 결론
+    - WebAPI로 백엔드를 운영하면 프론트는 모두 사용가능(윈앱, 웹앱, 모바일앱)
 
 ### AWS 클라우드 업로드
+- 클라우드 서비스 이용 : 어디서나 웹사이트 공개
+- 온프레미스 : 직접 서버를 구축. DB 서버 구축, 웹 서버 구축 등 직접 운영
+    - 서버 하드웨어 구매, 서버실 구축, UPS구성, 네트워크 스위치 구성
+    - OS구매, SW구매, 운영환경 설치, 개발환경구성
+    - 운영하면서 문제 해결, 유지보수
+- 클라우드 : 서버 구축 필요없고, DB 서버 신청시 바로 생성됨
+    - 서버실 구축X, 하드웨어 구매 필요X, SW 구매X, 운영문제 관리X
+    - 사용료가 저렴하지 않음
+- AWS 라이트세일로 웹사이트 업로드
+    - https://aws.amazon.com/ko/lightsail/
+        - 기존 AWS보다 저렴하게 사용할 수 있는 서비스
+
+#### AWS Lightsail에 웹 서버 올리기
+1. 인스턴스 생성
+    1. Microsoft Windows > Windows Server 2019
+    2. 네트워크는 듀얼스택
+    3. 크기, 월별 $9.5 선택 `90일 무료`
+    4. 인스턴스 이름
+    5. 인스턴스 생성
+2. 인스턴스 관리 > RDP를 사용하여 연결
+    1. 초기화 대기(네트워크 나올 때 까지, 1분 가량)
+    2. Network2를 허용 Yes 클릭
+        - Configure this local server
+        - IE Enhanced Security Config : ON(웹사이트 오픈 불가) -> OFF
+3. 필요 SW 다운로드
+    1. MySQL Installer for Windows
+    2. Chrome browser(option)
+    4. File Zilla FTP Server 
+4. MySQL 설치
+    1. Custom 선택
+    2. MySQL Server 8.0.34 - x64만 선택, 설치 후 Next
+    3. 일반적으로 Next
+    4. Authentication Method > Use Legacy Authentication (Retain MySQL 5. x Compatibility) 선택
+        - 암호 정책이 간결함 
+        - 대신 AWS는 IP나 공개된 상황이라 간단한 암호하면 절대 안된다!!
+    5. 나머지는 Next, Execute 실행
+    6. 마지막에  Finish 클릭
+    7. Firewall & Network Protection 실행 > Advanced setting 선택
+        - Inbound Rules > Port 3306 확인, 없으면 생성
+    8. 라이트세일 인스턴스 관리 > 네트워크 
+        - IPv4 방화벽
 
 ### 부가적인 기능
 - OAuth(구글 로그인)
 - 파일업로드
-- WebAPI 서버 + 웹사이트 할 일 수정
 
 #### MyPortfolio 완성
+- 📋 게시판 기능 구현
+Bootstrap 기반으로 간단한 게시판 페이지를 구현하였습니다.  
+**글 등록 / 목록 조회 / 검색 / 상세 보기 / 수정 / 삭제** 기능을 제공합니다. ✨
+
+
+#### 🖼️ 주요 화면
+- 게시판 목록
+  ![게시판 목록 화면](./image/day10(게시판)/board_main.png)
+
+- 게시글 작성
+  ![게시글 작성 화면](./image/day10(게시판)/board_create.png)
+
+- 게시글 상세보기
+  ![게시글 상세보기 화면](./image/day10(게시판)/detail_board.png)
+
+- 게시글 수정
+  ![게시글 수정 화면](./image/day10(게시판)/update_board.png)
+
+- 게시글 삭제
+  ![게시글 삭제 화면](./image/day10(게시판)/delete_board.png)
+
+- 게시글 검색 결과
+  ![게시글 검색 화면](./image/day10(게시판)/search.png)
+<hr/>
 
 ## 15일차
 
